@@ -5,10 +5,246 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <button></button>
+    <!-- HERO SECTION -->
+    <header>
+      <div class="navbar">
+        <div class="navbar-left">
+          <img class="burger" src="assets/burger-white.svg" alt="menu-button" />
+          <img
+            class="search"
+            src="assets/search-white.svg"
+            alt="search-button"
+            srcset=""
+          />
+        </div>
+
+        <div class="logo">
+          <img src="assets/logo-white.svg" alt="protech-logotype" srcset="" />
+        </div>
+
+        <div class="navbar-right">
+          <img class="cart" src="assets/cart-white.svg" alt="cart" />
+          <div class="darkmode">
+            <img
+              class="moon"
+              src="assets/moon-white.svg"
+              alt="darkmode/lightmode"
+            />
+            <img class="sun" src="assets/sun-white.svg" alt="" srcset="" />
+          </div>
+          <img
+            class="web"
+            src="assets/web-white.svg"
+            alt="language"
+            srcset=""
+          />
+        </div>
+      </div>
+
+      <div class="hero">
+        <h1>
+          KYL DIN HÄST<br />
+          KALLA HÄSTAR ÄR COOLA
+        </h1>
+      </div>
+    </header>
+
+    <!-- END HERO SECTION -->
+
+    <!-- MAIN SECTION -->
+
+    <main>
+      <div class="presentation">
+        <div class="tech">
+          <div class="img"></div>
+          <div class="text">
+            <div class="therma-black">
+              <img src="assets/thermaweave-black.svg" alt="" srcset="" />
+            </div>
+            <div class="therma-white">
+              <img src="assets/thermaweave-white.svg" alt="" srcset="" />
+            </div>
+            <p>
+              Vår banbrytande textil kombinerar termoreglerande material och
+              sensorer för att snabbt kyla och stötta högpresterande djur och
+              människor vid skador och rehabilitering. Den skapar en optimal
+              miljö för återhämtning och främjar snabbare rehabilitering.
+            </p>
+            <button>Läs mer</button>
+          </div>
+        </div>
+
+        <div class="use">
+          <div class="text">
+            <h3>Användande</h3>
+            <p>
+              Använd vår textil i idrott, hästsport och medicin för att
+              accelerera läkningsprocessen och minimera risken för överhettning
+              eller underkylning. Det är den perfekta lösningen för de som
+              strävar efter toppform och snabb återhämtning.
+            </p>
+            <button>Läs mer</button>
+          </div>
+          <div class="img"></div>
+        </div>
+      </div>
+
+      <div class="email">
+        <div class="left">
+          <h2>
+            ANMÄL DIG TILL VÅRT NYHETSBREV OCH FÅ 10% RABATT PÅ DIN FÖRSTA ORDER
+          </h2>
+        </div>
+        <div class="right">
+          <h3>ANGE E-POST</h3>
+          <img src="assets/arrow-black.svg" alt="" srcset="" />
+        </div>
+      </div>
+
+      <div class="products">
+        <div class="items">
+          <div class="item">
+            <div class="item-img"></div>
+            <div class="item-text">
+              <h3>Titel</h3>
+              <p>150kr</p>
+            </div>
+            <div class="item-info">
+              <p>info om produkten</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="item-img"></div>
+            <div class="item-text">
+              <h3>Titel</h3>
+              <p>150kr</p>
+            </div>
+            <div class="item-info">
+              <p>info om produkten</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="item-img"></div>
+            <div class="item-text">
+              <h3>Titel</h3>
+              <p>150kr</p>
+            </div>
+            <div class="item-info">
+              <p>info om produkten</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="item-img"></div>
+            <div class="item-text">
+              <h3>Titel</h3>
+              <p>150kr</p>
+            </div>
+            <div class="item-info">
+              <p>info om produkten</p>
+            </div>
+          </div>
+
+          <div class="scroller" data-direction="left" data-speed="fast">
+            <div class="scroller__inner">
+              <div class="item">
+                <div class="item-img"></div>
+                <div class="item-text">
+                  <h3>Titel 1</h3>
+                  <p>150kr</p>
+                </div>
+                <div class="item-info">
+                  <p>info om produkten</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="item-img"></div>
+                <div class="item-text">
+                  <h3>Titel 2</h3>
+                  <p>150kr</p>
+                </div>
+                <div class="item-info">
+                  <p>info om produkten</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="item-img"></div>
+                <div class="item-text">
+                  <h3>Titel 3</h3>
+                  <p>150kr</p>
+                </div>
+                <div class="item-info">
+                  <p>info om produkten</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="item-img"></div>
+                <div class="item-text">
+                  <h3>Titel 4</h3>
+                  <p>150kr</p>
+                </div>
+                <div class="item-info">
+                  <p>info om produkten</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- END MAIN SECTION -->
+
+    <!-- FOOTER SECTION -->
+
+    <footer class="footer-wrapper">
+      <div class="footer">
+        <div class="about">
+          <h3>PROTECH</h3>
+          <p>Om oss</p>
+          <p>Hållbarhet</p>
+          <p>Karriär</p>
+          <p>Integritetspolicy & Villkor</p>
+        </div>
+
+        <div class="follow">
+          <h3>FÖLJ OSS</h3>
+          <div class="socials-black">
+            <img src="assets/klarna-black.svg" alt="klarna" srcset="" />
+            <img src="assets/facebook-black.svg" alt="facebook" srcset="" />
+            <img src="assets/instagram-black.svg" alt="instagram" srcset="" />
+          </div>
+          <div class="socials-white">
+            <img src="assets/klarna-white.svg" alt="klarna" srcset="" />
+            <img src="assets/facebook-white.svg" alt="facebook" srcset="" />
+            <img src="assets/instagram-white.svg" alt="instagram" srcset="" />
+          </div>
+        </div>
+
+        <div class="support">
+          <h3>SUPPORT</h3>
+          <p>Kontakta oss</p>
+          <p>Hjälpcenter</p>
+          <p>Leverans & Retur</p>
+          <p>FAQ</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- END FOOTER SECTION -->
+
     <script src="script.js"></script>
   </body>
 </html>
