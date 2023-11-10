@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-body {
+body,
+input {
   font-family: IBM Plex Sans;
 }
 
@@ -39,7 +40,8 @@ h2 {
   letter-spacing: -2.56px;
 }
 
-h3 {
+h3,
+input {
   font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.96px;
@@ -128,7 +130,6 @@ button {
 }
 .tech .img {
   width: 719.632px;
-  flex-shrink: 0;
   align-self: stretch;
   border-radius: 426px;
   background: #d9d9d9;
@@ -142,7 +143,7 @@ button {
 }
 
 .tech .text p {
-  width: 437.632px;
+  max-width: 437.632px;
 }
 
 .tech button {
@@ -175,7 +176,7 @@ button {
 }
 
 .use .text p {
-  width: 437.632px;
+  max-width: 437.632px;
 }
 
 .use button {
@@ -192,7 +193,6 @@ button {
 
 .use .img {
   width: 719.632px;
-  flex-shrink: 0;
   align-self: stretch;
   border-radius: 426px;
   background: #d9d9d9;
@@ -215,13 +215,17 @@ button {
   flex-shrink: 0;
 }
 
-.email .left h2 {
-  width: 80%;
-  text-align: justify;
+.email .left h3 {
+  text-align: center;
+  width: 62%;
+  line-height: 2rem;
+  letter-spacing: 2px;
+  color: #fff;
 }
 
 .email .right {
   background: #e1e1e1;
+  color: #000;
   display: flex;
   width: 50%;
   height: 720px;
@@ -229,9 +233,38 @@ button {
   justify-content: center;
   gap: 10px;
 }
-
-.email .right h3 {
+.email-input h3 {
+  text-align: center;
+  width: 62%;
+  line-height: 2rem;
+  letter-spacing: 2px;
   color: #000;
+}
+
+.email-text:hover {
+  cursor: pointer;
+}
+
+.email-input {
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+.email-btn {
+  background: none !important;
+  border: none;
+}
+
+.email-welcome {
+  max-width: 80%;
+  text-align: center;
+}
+
+.email-welcome span {
+  text-decoration: underline;
 }
 
 .products {
@@ -352,13 +385,13 @@ button {
   position: absolute;
   display: block;
   width: 100%;
-  height: 2px;
+  height: 1px;
   bottom: 0;
   left: 0;
   background-color: #000;
   transform: scaleX(0);
   transform-origin: top left;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
 }
 
 .footer p:hover::before {

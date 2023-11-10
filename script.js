@@ -8,6 +8,7 @@ const socialW = document.querySelector(".socials-white");
 const thermaB = document.querySelector(".therma-black");
 const thermaW = document.querySelector(".therma-white");
 
+/* NAVBAR ON SCROLL */
 window.onscroll = (e) => {
   e.preventDefault();
   if (window.scrollY > 500) {
@@ -17,12 +18,14 @@ window.onscroll = (e) => {
   }
 };
 
+/* LOGO CLICK */
 logo.addEventListener("click", (e) => {
   e.preventDefault();
   location.reload();
   window.scrollTo(0, 0, (behavior = "smooth"));
 });
 
+/* DARKMODE */
 sun.style.display = "none";
 thermaW.style.display = "none";
 
@@ -45,6 +48,30 @@ darkmode.addEventListener("click", (e) => {
     thermaB.style.display = "flex";
     thermaW.style.display = "none";
   }
+});
+
+const emailText = document.querySelector(".email-text");
+const emailInput = document.querySelector(".email-input");
+const emailBtn = document.querySelector(".email-btn");
+const emailWelcome = document.querySelector(".email-welcome");
+
+emailInput.style.display = "none";
+emailBtn.style.display = "none";
+emailWelcome.style.display = "none";
+
+emailText.addEventListener("click", (e) => {
+  e.preventDefault();
+  emailText.style.display = "none";
+  emailInput.style.display = "block";
+  emailBtn.style.display = "block";
+  emailInput.focus();
+});
+
+emailBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  emailInput.style.display = "none";
+  emailBtn.style.display = "none";
+  emailWelcome.style.display = "block";
 });
 
 /* TEST */
