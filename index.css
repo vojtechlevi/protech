@@ -1,3 +1,8 @@
+:root {
+  --check-primary: #000;
+  --check-secondary: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -365,9 +370,13 @@ button {
   gap: 20px;
 }
 
+.footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .footer p:hover {
   position: relative;
-  text-decoration: none;
 }
 
 .footer p::before {
@@ -378,7 +387,7 @@ button {
   height: 1px;
   bottom: 0;
   left: 0;
-  background-color: #000;
+  background-color: var(--check-primary);
   transform: scaleX(0);
   transform-origin: top left;
   transition: transform 0.3s ease;

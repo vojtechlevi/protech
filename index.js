@@ -3,7 +3,7 @@ const navbar = document.querySelector(".navbar");
 const darkmode = document.querySelector(".darkmode");
 const moon = document.querySelector(".moon");
 const sun = document.querySelector(".sun");
-const navActive = document.querySelector(".nav-active");
+var underline = document.querySelector(".footer");
 
 const socialB = document.querySelector(".socials-black");
 const socialW = document.querySelector(".socials-white");
@@ -55,7 +55,13 @@ darkmode.addEventListener("click", (e) => {
     thermaB.style.display = "flex";
     thermaW.style.display = "none";
   }
+
+  if (document.body.classList.contains("dark")) {
+    underline.style.setProperty("--check-primary", "#fff");
+  }
 });
+
+var underline = document.querySelector(".footer");
 
 const emailText = document.querySelector(".email-text");
 const emailInput = document.querySelector(".email-input");
