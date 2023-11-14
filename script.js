@@ -3,6 +3,8 @@ const navbar = document.querySelector(".navbar");
 const darkmode = document.querySelector(".darkmode");
 const moon = document.querySelector(".moon");
 const sun = document.querySelector(".sun");
+const navActive = document.querySelector(".nav-active");
+
 const socialB = document.querySelector(".socials-black");
 const socialW = document.querySelector(".socials-white");
 const thermaB = document.querySelector(".therma-black");
@@ -11,10 +13,15 @@ const thermaW = document.querySelector(".therma-white");
 /* NAVBAR ON SCROLL */
 window.onscroll = (e) => {
   e.preventDefault();
-  if (window.scrollY > 500) {
+  if (window.scrollY > 700) {
     navbar.classList.add("nav-active");
+    if (darkmode.classList.contains("light")) {
+      navbar.classList.add("dark");
+    }
   } else {
     navbar.classList.remove("nav-active");
+    navbar.classList.remove("dark");
+    navbar.style.color = "black";
   }
 };
 
@@ -33,18 +40,18 @@ darkmode.addEventListener("click", (e) => {
   e.preventDefault();
   document.body.classList.toggle("dark");
   darkmode.classList.toggle("light");
+
+  if (navbar.classList.contains("nav-active")) {
+    navbar.classList.toggle("dark");
+  }
   if (darkmode.classList.contains("light")) {
     sun.style.display = "block";
     moon.style.display = "none";
-    socialB.style.display = "none";
-    socialW.style.display = "flex";
     thermaB.style.display = "none";
     thermaW.style.display = "flex";
   } else {
     sun.style.display = "none";
     moon.style.display = "block";
-    socialW.style.display = "none";
-    socialB.style.display = "flex";
     thermaB.style.display = "flex";
     thermaW.style.display = "none";
   }
