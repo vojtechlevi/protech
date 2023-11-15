@@ -28,7 +28,6 @@ window.onscroll = (e) => {
 /* LOGO CLICK */
 logo.addEventListener("click", (e) => {
   e.preventDefault();
-  location.reload();
   window.scrollTo(0, 0, (behavior = "smooth"));
 });
 

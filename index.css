@@ -51,6 +51,12 @@ input {
   letter-spacing: -0.96px;
 }
 
+h4 {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.64px;
+}
+
 p {
   line-height: 22px;
   letter-spacing: -0.64px;
@@ -268,7 +274,6 @@ button {
 }
 
 .products {
-  padding-top: 60px; /* OBS */
   display: flex;
   width: 100%;
   align-items: center;
@@ -277,35 +282,34 @@ button {
 }
 .items {
   display: flex;
-  width: 780px;
-
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
+  width: 100%;
   flex-wrap: wrap;
 }
 
 .item {
   display: flex;
-  width: 300px;
-  height: 402px;
+  width: 50%;
+  height: 512px;
+  padding: 16px;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
   flex-shrink: 0;
+  background-color: #b5b2b2;
 }
 
 .item-img {
-  border-radius: 15px;
-  background: #d9d9d9;
+  /* border-radius: 15px; */
+  border: 1px solid #000;
   /* width: 330px; */
-  width: 250px;
+  width: 260px;
   height: 330px;
   flex-shrink: 0;
 }
 
 .item-text {
   display: flex;
+  color: #000;
   width: 250px;
   height: 31px;
   justify-content: space-between;
@@ -315,11 +319,40 @@ button {
 
 .item-info {
   display: flex;
+  color: #000;
   width: 250px;
   height: 21px;
   align-items: flex-start;
   gap: 10px;
   flex-shrink: 0;
+}
+
+.contact {
+  display: flex;
+  width: 100%;
+  height: 374px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: #e1e1e1;
+}
+
+.contact-info {
+  display: flex;
+  width: 30%;
+  height: 386px;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-shrink: 0;
+}
+
+.divider {
+  width: 4px;
+  height: 97.402px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #000;
 }
 
 /* END MAIN SECTION */
@@ -329,17 +362,21 @@ button {
 .footer-wrapper {
   display: flex;
   width: 100%;
-  height: 450px;
+  height: 350px;
   justify-content: center;
+  align-items: center;
 }
 
 .footer {
   display: flex;
-  width: 100%;
-  padding: 0px 120px;
+  width: 90%;
+  padding: 40px 20px;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   align-content: flex-start;
+  row-gap: 10px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
 }
 
 .about {
@@ -373,6 +410,10 @@ button {
 .footer a {
   text-decoration: none;
   color: inherit;
+}
+
+.footer p {
+  font-size: 14px;
 }
 
 .footer p:hover {
