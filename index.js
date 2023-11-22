@@ -10,6 +10,62 @@ const socialW = document.querySelector(".socials-white");
 const thermaB = document.querySelector(".therma-black");
 const thermaW = document.querySelector(".therma-white");
 
+const iconbox = document.querySelector(".iconbox");
+const plus = document.querySelector(".plus");
+const down = document.querySelector(".down");
+const iconboxtwo = document.querySelector(".iconboxtwo");
+const plustwo = document.querySelector(".plustwo");
+const downtwo = document.querySelector(".downtwo");
+const iconboxthree = document.querySelector(".iconboxthree");
+const plusthree = document.querySelector(".plusthree");
+const downthree = document.querySelector(".downthree");
+
+const about = document.querySelector(".more-about");
+const abouttwo = document.querySelector(".more-about-two");
+const aboutthree = document.querySelector(".more-about-three");
+
+down.style.display = "none";
+about.style.display = "none";
+iconbox.addEventListener("click", (e) => {
+  if (about.style.display === "none") {
+    down.style.display = "flex";
+    about.style.display = "flex";
+    plus.style.display = "none";
+  } else {
+    about.style.display = "none";
+    down.style.display = "none";
+    plus.style.display = "flex";
+  }
+});
+
+downtwo.style.display = "none";
+abouttwo.style.display = "none";
+iconboxtwo.addEventListener("click", (e) => {
+  if (abouttwo.style.display === "none") {
+    abouttwo.style.display = "flex";
+    downtwo.style.display = "flex";
+    plustwo.style.display = "none";
+  } else {
+    abouttwo.style.display = "none";
+    downtwo.style.display = "none";
+    plustwo.style.display = "flex";
+  }
+});
+
+downthree.style.display = "none";
+aboutthree.style.display = "none";
+iconboxthree.addEventListener("click", (e) => {
+  if (aboutthree.style.display === "none") {
+    aboutthree.style.display = "flex";
+    downthree.style.display = "flex";
+    plusthree.style.display = "none";
+  } else {
+    aboutthree.style.display = "none";
+    downthree.style.display = "none";
+    plusthree.style.display = "flex";
+  }
+});
+
 /* NAVBAR ON SCROLL */
 window.onscroll = (e) => {
   e.preventDefault();
