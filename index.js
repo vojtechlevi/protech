@@ -24,6 +24,44 @@ const about = document.querySelector(".more-about");
 const abouttwo = document.querySelector(".more-about-two");
 const aboutthree = document.querySelector(".more-about-three");
 
+const brown = document.querySelector(".brown");
+const blue = document.querySelector(".blue");
+const red = document.querySelector(".red");
+const profile = document.querySelector(".profile");
+const front = document.querySelector(".front");
+
+if (sessionStorage.getItem("dark") === "true") {
+  document.body.classList.add("dark");
+  darkmode.classList.add("light");
+  navbar.classList.add("dark");
+  sun.style.display = "block";
+  moon.style.display = "none";
+}
+
+brown.addEventListener("click", (e) => {
+  brown.style.border = "2px solid";
+  red.style.border = "none";
+  blue.style.border = "none";
+  profile.src = "assets/images/hästtäcke/Brown_Profile_720x512.png";
+  front.src = "assets/images/hästtäcke/Brown_Front_720x512.png";
+});
+
+blue.addEventListener("click", (e) => {
+  blue.style.border = "2px solid ";
+  brown.style.border = "none";
+  red.style.border = "none";
+  profile.src = "assets/images/hästtäcke/Blue_Profile_720x512.png";
+  front.src = "assets/images/hästtäcke/blue_Front_720x512.png";
+});
+
+red.addEventListener("click", (e) => {
+  red.style.border = "2px solid ";
+  blue.style.border = "none";
+  brown.style.border = "none";
+  profile.src = "assets/images/hästtäcke/Red_Profile_720x512.png";
+  front.src = "assets/images/hästtäcke/Red_Front_720x512.png";
+});
+
 down.style.display = "none";
 about.style.display = "none";
 iconbox.addEventListener("click", (e) => {
@@ -84,12 +122,12 @@ window.onscroll = (e) => {
 /* LOGO CLICK */
 logo.addEventListener("click", (e) => {
   e.preventDefault();
+  window.location = "index.html";
   window.scrollTo(0, 0, (behavior = "smooth"));
 });
 
 /* DARKMODE */
 sun.style.display = "none";
-thermaW.style.display = "none";
 
 darkmode.addEventListener("click", (e) => {
   e.preventDefault();
@@ -102,13 +140,11 @@ darkmode.addEventListener("click", (e) => {
   if (darkmode.classList.contains("light")) {
     sun.style.display = "block";
     moon.style.display = "none";
-    thermaB.style.display = "none";
-    thermaW.style.display = "flex";
+    sessionStorage.setItem("dark", "true");
   } else {
     sun.style.display = "none";
     moon.style.display = "block";
-    thermaB.style.display = "flex";
-    thermaW.style.display = "none";
+    sessionStorage.setItem("dark", "false");
   }
 
   if (document.body.classList.contains("dark")) {

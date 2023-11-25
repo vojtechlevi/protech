@@ -46,3 +46,10 @@ darkmode.addEventListener("click", (e) => {
     moon.style.display = "block";
   }
 });
+if (sessionStorage.getItem("dark") === "true") {
+  document.body.classList.add("dark");
+  darkmode.classList.add("light");
+  navbar.classList.add("dark");
+  sun.style.display = "block";
+  moon.style.display = "none";
+}

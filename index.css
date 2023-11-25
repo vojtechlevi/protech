@@ -20,7 +20,7 @@ input {
 
 .dark {
   transition: 1s ease-in;
-  background-color: #000 !important;
+  background-color: #1c1e1b !important;
   color: #fff !important;
 }
 
@@ -120,23 +120,19 @@ svg {
 .presentation {
   display: flex;
   width: 100%;
-  padding: 60px 20px;
+  margin: 60px 20px;
   flex-direction: column;
-  gap: 10px;
+  gap: 50px;
 }
 
 .tech {
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: center;
-  gap: 0px;
+  justify-content: space-around;
 }
 .tech-img {
-  background-image: url("assets/images/redband.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 500px;
+  width: 600px;
   height: 500px;
 }
 .tech .text {
@@ -149,7 +145,12 @@ svg {
 }
 
 .read-more {
-  max-width: 320px;
+  max-width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .read-more button {
@@ -157,7 +158,7 @@ svg {
   width: 110px;
   padding: 8px 16px;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   border-radius: 30px;
   background-color: #fff;
   border: 1px solid #000;
@@ -172,7 +173,8 @@ svg {
 }
 
 .email .left {
-  background: #969696;
+  background-image: url(assets/images/Miljöbild.png);
+  background-position: center;
   display: flex;
   width: 50%;
   height: 720px;
@@ -190,7 +192,7 @@ svg {
 }
 
 .email .right {
-  background: #e1e1e1;
+  background: #e2e1d9;
   color: #000;
   display: flex;
   width: 50%;
@@ -236,6 +238,7 @@ svg {
 .products {
   display: flex;
   width: 100%;
+  margin: 60px 0px;
   align-items: center;
   justify-content: center;
   align-items: center;
@@ -250,38 +253,92 @@ svg {
 
 .item {
   display: flex;
-  min-width: 512px;
+  width: 50%;
   height: 512px;
   padding: 16px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
-  background-color: #b5b2b2;
-}
-
-.item-img {
-  /* border-radius: 15px; */
-  border: 1px solid #000;
-  /* width: 330px; */
-  width: 260px;
-  height: 330px;
-  flex-shrink: 0;
+  position: relative;
 }
 
 .item-text {
   display: flex;
-  color: #000;
   width: 250px;
   height: 31px;
   justify-content: space-between;
   align-items: flex-start;
   flex-shrink: 0;
+  position: absolute;
+  bottom: 30px;
+}
+
+.front {
+  display: none;
+}
+
+.item:hover {
+  .front {
+    display: flex;
+  }
+  .profile {
+    display: none;
+  }
+}
+
+.colors {
+  position: absolute;
+  top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.item:nth-of-type(1) {
+  border-right: 1px solid;
+}
+
+.item:nth-of-type(2) {
+  border-left: none;
+}
+
+.item:nth-of-type(3) {
+  border-top: 1px solid;
+  border-right: 1px solid;
+}
+.item:nth-of-type(4) {
+  border-top: 1px solid;
+}
+
+.blue,
+.brown,
+.red {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.blue {
+  background-color: #5d5e6a;
+}
+
+.brown {
+  background-color: #756b5c;
+}
+
+.red {
+  background-color: #764d4d;
+}
+
+.benskydd {
+  width: 720px;
+  height: 500px;
 }
 
 .item-info {
+  position: absolute;
+  bottom: 10px;
   display: flex;
-  color: #000;
   width: 250px;
   height: 21px;
   align-items: flex-start;
@@ -296,7 +353,7 @@ svg {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  background: #e1e1e1;
+  background: #fefefe;
 }
 
 .contact-info {
@@ -331,6 +388,8 @@ svg {
   width: 100%;
   justify-content: center;
   align-items: center;
+  background-color: #fafafa;
+  color: #000;
 }
 
 .footer-desktop {
@@ -373,7 +432,7 @@ svg {
   gap: 20px;
 }
 
-.footer a {
+.footer-desktop a {
   text-decoration: none;
   color: inherit;
 }
@@ -386,12 +445,13 @@ svg {
   display: none;
 }
 
-.footer p:hover {
+.footer-desktop p:hover {
   position: relative;
 }
 
-.footer p::before {
+.footer-desktop p::before {
   content: "";
+  color: inherit;
   position: absolute;
   display: block;
   width: 100%;
@@ -404,11 +464,11 @@ svg {
   transition: transform 0.3s ease;
 }
 
-.footer p:hover::before {
+.footer-desktop p:hover::before {
   transform: scaleX(1);
 }
 
-.footer p,
+.footer-desktop p,
 img {
   cursor: pointer;
 }
@@ -482,7 +542,7 @@ img {
 
   .email .right {
     width: 100%;
-    height: 150px;
+    height: 250px;
     justify-content: center;
     align-items: center;
   }
