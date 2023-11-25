@@ -18,6 +18,11 @@ input {
   font-family: IBM Plex Sans;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .dark {
   transition: 1s ease-in;
   background-color: #1c1e1b !important;
@@ -44,8 +49,7 @@ h2 {
   letter-spacing: -2.56px;
 }
 
-h3,
-input {
+h3 {
   font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.96px;
@@ -68,11 +72,16 @@ svg {
 
 /* HERO SECTION */
 
+.navbar-wrapper {
+  padding: 0px;
+}
+
+.navbar-mobile {
+  display: none;
+}
 .navbar {
-  transition: 1s ease-in;
   display: flex;
   width: 100%;
-  height: 110px;
   align-items: center;
   justify-content: space-between;
   padding: 0 120px;
@@ -84,15 +93,33 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  display: none;
+}
+
+.logo-desktop {
+  display: block;
 }
 
 .navbar-left {
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 
-.navbar-right {
-  gap: 5px;
+.language {
+  display: block;
+}
+
+.menu-icons-desktop {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right .menu-mobile {
+  display: none;
 }
 
 .navbar svg:hover {
@@ -101,6 +128,50 @@ svg {
 
 .nav-active {
   background-color: #fff;
+}
+
+.dropdown-menu {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  position: fixed;
+  z-index: 11;
+  margin-top: 100px;
+  margin-left: 120px;
+  padding: 70px 50px;
+  gap: 30px;
+}
+
+.dropdown-menu li {
+  margin-bottom: 10px;
+}
+
+.menu-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-item,
+.menu-item-two,
+.menu-item-three,
+.menu-item-four {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-products,
+.menu-products-two,
+.menu-products-three,
+.menu-products-four {
+  display: none;
+  list-style: none;
+}
+
+.searchbar {
+  display: none;
 }
 
 .hero {
@@ -219,6 +290,9 @@ svg {
   border: none;
   outline: none;
   text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.96px;
 }
 
 .email-btn {
@@ -476,16 +550,124 @@ img {
 /* END FOOTER SECTION */
 
 @media screen and (max-width: 740px) {
-  .navbar {
+  .navbar-wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
     padding: 12px 20px;
+    gap: 30px;
   }
-  .navbar-left {
+
+  .navbar {
+    transition: 1s ease-in;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 0;
+    gap: 10px;
+    position: relative;
+  }
+
+  .navbar-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navbar-left,
+  .language,
+  .logo-desktop {
     display: none;
   }
 
-  .search svg {
-    justify-content: center;
-    align-items: bottom;
+  .navbar svg:hover {
+    cursor: pointer;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: relative;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0;
+    width: 100%;
+    padding: 10px 20px;
+  }
+
+  .menu-icons-mobile {
+    display: flex;
+    align-items: center;
+  }
+
+  .down-menu-mobile {
+    display: flex;
+  }
+
+  .menu-item-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .menu-item,
+  .menu-item-two,
+  .menu-item-three,
+  .menu-item-four {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .menu-products,
+  .menu-products-two,
+  .menu-products-three,
+  .menu-products-four {
+    display: none;
+    list-style: none;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  .searchbar {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .searchbar input {
+    width: 100%;
+    margin-right: 34px;
+    font-size: 14px;
+    font-weight: 400;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid black;
+  }
+
+  ::placeholder {
+    color: #d8d8d8;
+    font-size: 14px;
+  }
+
+  .navbar-right .menu-mobile {
+    display: flex;
+  }
+
+  .logo {
+    display: flex;
+  }
+
+  .navbar-left,
+  .language,
+  .logo-desktop {
+    display: none;
   }
 
   .presentation {
@@ -607,10 +789,6 @@ img {
     gap: 20px;
   }
 
-  .more-about a {
-    text-decoration: none;
-    color: inherit;
-  }
   .plus {
     display: flex;
     cursor: pointer;
