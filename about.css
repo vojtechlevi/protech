@@ -53,11 +53,7 @@ p {
 }
 
 /* HERO SECTION */
-
-.navbar {
-  display: none;
-}
-
+/*
 .navbar-mobile {
   display: flex;
   width: 100%;
@@ -79,6 +75,86 @@ p {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+*/
+
+.navbar-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 12px 20px;
+  gap: 30px;
+}
+
+.navbar {
+  transition: 1s ease-in;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 10px;
+}
+
+.navbar-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-left,
+.language,
+.logo-desktop {
+  display: none;
+}
+
+.navbar svg:hover {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  gap: 30px;
+  padding: 10px 20px;
+}
+
+.menu-icons-mobile {
+  display: flex;
+  align-items: center;
+}
+
+.down-menu-mobile {
+  display: none;
+}
+
+.menu-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-item,
+.menu-item-two,
+.menu-item-three,
+.menu-item-four {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-products,
+.menu-products-two,
+.menu-products-three,
+.menu-products-four {
+  display: none;
+  list-style: none;
+}
+
+li {
+  margin-bottom: 10px;
 }
 
 .searchbar {
@@ -239,12 +315,15 @@ button {
 @media screen and (min-width: 1025px) {
   /* HERO SECTION */
 
+  .navbar-wrapper {
+    padding: 0px;
+  }
+
   .navbar-mobile {
     display: none;
   }
   .navbar {
-    transition: 1s ease-in;
-    display: flex;
+    flex-direction: row;
     width: 100%;
     height: 110px;
     align-items: center;
@@ -258,12 +337,33 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .logo-desktop {
+    display: block;
   }
 
   .navbar-left {
     display: flex;
-    gap: 20px;
+    gap: 10px;
+  }
+
+  .language {
+    display: block;
+  }
+
+  .menu-icons-desktop {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-right .menu-mobile {
+    display: none;
   }
 
   .navbar svg:hover {
@@ -272,6 +372,16 @@ button {
 
   .nav-active {
     background-color: #fff;
+  }
+
+  .dropdown-menu {
+    width: 400px;
+    background-color: #fff;
+    position: fixed;
+    z-index: 11;
+    margin-top: 100px;
+    margin-left: 120px;
+    padding: 70px 50px;
   }
 
   .searchbar {
@@ -294,26 +404,29 @@ button {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 1024px;
-    padding: 150px 0px 0px 0px;
+    padding: 100px 0px 0px 0px;
+    gap: 100px;
   }
 
   .company-img {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
     width: 50%;
     height: 100%;
+    padding-top: 100px;
   }
 
   .company-img img {
-    width: 100%;
+    max-width: 700px;
+    padding-left: 150px;
   }
 
   .company-about {
-    width: 50%;
+    display: flex;
     justify-content: flex-start;
-    padding-right: 50px;
+    align-items: flex-start;
+    width: 50%;
+    padding-right: 150px;
   }
 
   .company-about p {
@@ -327,12 +440,16 @@ button {
   .founders {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 100px 225px;
-    gap: 100px;
+    gap: 200px;
   }
 
   .founders .text {
-    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 415px;
   }
 
   .founders .text p {
@@ -350,10 +467,10 @@ button {
 
   .teams {
     display: flex;
-    width: 30%;
+    width: 210px;
     height: 760px;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     gap: 10px;
   }
 
