@@ -33,10 +33,24 @@ const hidefour = document.querySelector(".hide-four");
 const menuItemfour = document.querySelector(".menu-item-four");
 const productsfour = document.querySelector(".menu-products-four");
 
+const iconbox = document.querySelector(".iconbox");
+const plus = document.querySelector(".plus");
+const down = document.querySelector(".down");
+const iconboxtwo = document.querySelector(".iconboxtwo");
+const plustwo = document.querySelector(".plustwo");
+const downtwo = document.querySelector(".downtwo");
+const iconboxthree = document.querySelector(".iconboxthree");
+const plusthree = document.querySelector(".plusthree");
+const downthree = document.querySelector(".downthree");
+
+const about = document.querySelector(".more-about");
+const abouttwo = document.querySelector(".more-about-two");
+const aboutthree = document.querySelector(".more-about-three");
+
 /* NAVBAR ON SCROLL */
 window.onscroll = (e) => {
   e.preventDefault();
-  if (window.scrollY > 300) {
+  if (window.scrollY > 250) {
     navbar.classList.add("nav-active");
     if (darkmode.classList.contains("light")) {
       navbar.classList.add("dark");
@@ -48,12 +62,17 @@ window.onscroll = (e) => {
   }
 };
 
+if (window.outerWidth > 740) {
+  navbar.classList.add("nav-active");
+}
+
 /* DARKMODE */
 sun.style.display = "none";
 
 darkmode.addEventListener("click", (e) => {
   e.preventDefault();
   document.body.classList.toggle("dark");
+  dropdownContent.classList.toggle("dark");
   darkmode.classList.toggle("light");
 
   if (navbar.classList.contains("nav-active")) {
@@ -62,14 +81,17 @@ darkmode.addEventListener("click", (e) => {
   if (darkmode.classList.contains("light")) {
     sun.style.display = "block";
     moon.style.display = "none";
+    sessionStorage.setItem("dark", "true");
   } else {
     sun.style.display = "none";
     moon.style.display = "block";
+    sessionStorage.setItem("dark", "false");
   }
 });
 
 if (sessionStorage.getItem("dark") === "true") {
   document.body.classList.add("dark");
+  dropdownContent.classList.toggle("dark");
   darkmode.classList.add("light");
   navbar.classList.add("dark");
   sun.style.display = "block";
@@ -163,5 +185,47 @@ menuItemfour.addEventListener("click", (e) => {
     expandfour.style.display = "block";
     hidefour.style.display = "none";
     productsfour.style.display = "none";
+  }
+});
+
+down.style.display = "none";
+about.style.display = "none";
+iconbox.addEventListener("click", (e) => {
+  if (about.style.display === "none") {
+    down.style.display = "flex";
+    about.style.display = "flex";
+    plus.style.display = "none";
+  } else {
+    about.style.display = "none";
+    down.style.display = "none";
+    plus.style.display = "flex";
+  }
+});
+
+downtwo.style.display = "none";
+abouttwo.style.display = "none";
+iconboxtwo.addEventListener("click", (e) => {
+  if (abouttwo.style.display === "none") {
+    abouttwo.style.display = "flex";
+    downtwo.style.display = "flex";
+    plustwo.style.display = "none";
+  } else {
+    abouttwo.style.display = "none";
+    downtwo.style.display = "none";
+    plustwo.style.display = "flex";
+  }
+});
+
+downthree.style.display = "none";
+aboutthree.style.display = "none";
+iconboxthree.addEventListener("click", (e) => {
+  if (aboutthree.style.display === "none") {
+    aboutthree.style.display = "flex";
+    downthree.style.display = "flex";
+    plusthree.style.display = "none";
+  } else {
+    aboutthree.style.display = "none";
+    downthree.style.display = "none";
+    plusthree.style.display = "flex";
   }
 });

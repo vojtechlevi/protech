@@ -80,6 +80,7 @@ svg {
   display: none;
 }
 .navbar {
+  transition: 1s ease-in;
   display: flex;
   width: 100%;
   align-items: center;
@@ -462,8 +463,6 @@ svg {
   width: 100%;
   justify-content: center;
   align-items: center;
-  background-color: #fafafa;
-  color: #000;
 }
 
 .footer-desktop {
