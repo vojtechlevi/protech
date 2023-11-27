@@ -10,11 +10,11 @@
 }
 
 body {
-  transition: 1s ease-in;
 }
 
 body,
 input {
+  background-color: #fafafa;
   font-family: IBM Plex Sans;
 }
 
@@ -24,7 +24,6 @@ a {
 }
 
 .dark {
-  transition: 1s ease-in;
   background-color: #1c1e1b !important;
   color: #fff !important;
 }
@@ -80,7 +79,6 @@ svg {
   display: none;
 }
 .navbar {
-  transition: 1s ease-in;
   display: flex;
   width: 100%;
   align-items: center;
@@ -237,6 +235,11 @@ svg {
   margin-top: 20px;
 }
 
+.read-more button:hover {
+  background-color: #d3ddd3;
+  color: #fff;
+}
+
 .email {
   display: flex;
   width: 100%;
@@ -368,22 +371,6 @@ svg {
   gap: 10px;
 }
 
-.item:nth-of-type(1) {
-  border-right: 1px solid;
-}
-
-.item:nth-of-type(2) {
-  border-left: none;
-}
-
-.item:nth-of-type(3) {
-  border-top: 1px solid;
-  border-right: 1px solid;
-}
-.item:nth-of-type(4) {
-  border-top: 1px solid;
-}
-
 .blue,
 .brown,
 .red {
@@ -428,7 +415,6 @@ svg {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  background: #fefefe;
 }
 
 .contact-info {
@@ -439,7 +425,6 @@ svg {
   align-items: center;
   gap: 40px;
   flex-shrink: 0;
-  color: #000;
 }
 
 .divider {
@@ -447,7 +432,7 @@ svg {
   height: 100px;
   flex-shrink: 0;
   border-radius: 20px;
-  background: #000;
+  background: #d3ddd3;
 }
 
 /* END MAIN SECTION */

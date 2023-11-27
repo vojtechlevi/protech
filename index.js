@@ -3,7 +3,7 @@ const navbar = document.querySelector(".navbar");
 const darkmode = document.querySelector(".darkmode");
 const moon = document.querySelector(".moon");
 const sun = document.querySelector(".sun");
-var underline = document.querySelector(".footer");
+var underline = document.querySelector(".footer-desktop");
 
 const openMenuMobile = document.querySelector(".menu-mobile");
 const closeMenuMobile = document.querySelector(".down-menu-mobile");
@@ -53,6 +53,8 @@ const red = document.querySelector(".red");
 const profile = document.querySelector(".profile");
 const front = document.querySelector(".front");
 
+const contact = document.querySelector(".contact-wrapper");
+
 /* NAVBAR ON SCROLL */
 window.onscroll = (e) => {
   e.preventDefault();
@@ -82,6 +84,7 @@ darkmode.addEventListener("click", (e) => {
   e.preventDefault();
   document.body.classList.toggle("dark");
   dropdownContent.classList.toggle("dark");
+  contact.style.background = "#171A16";
   darkmode.classList.toggle("light");
 
   if (navbar.classList.contains("nav-active")) {
@@ -94,11 +97,12 @@ darkmode.addEventListener("click", (e) => {
   } else {
     sun.style.display = "none";
     moon.style.display = "block";
+    contact.style.background = "#fefefe";
     sessionStorage.setItem("dark", "false");
   }
-
   if (document.body.classList.contains("dark")) {
-    underline.style.setProperty("--check-primary", "#fff");
+    console.log("dark");
+    underline.style.background = "#fff";
   }
 });
 
