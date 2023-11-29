@@ -3,8 +3,9 @@ const navbar = document.querySelector(".navbar");
 const darkmode = document.querySelector(".darkmode");
 const moon = document.querySelector(".moon");
 const sun = document.querySelector(".sun");
-var underline = document.querySelector(".footer-desktop");
+var footer = document.querySelector(".footer-desktop");
 
+//NAVBAR DROPDOWN
 const openMenuMobile = document.querySelector(".menu-mobile");
 const closeMenuMobile = document.querySelector(".down-menu-mobile");
 const openMenuDesktop = document.querySelector(".menu-desktop");
@@ -12,27 +13,24 @@ const closeMenuDesktop = document.querySelector(".down-menu-desktop");
 const menuIconsMobile = document.querySelector(".menu-icons-mobile");
 const menuIconsDesktop = document.querySelector(".menu-icons-desktop");
 const dropdownContent = document.querySelector(".dropdown-menu");
-
 const expand = document.querySelector(".expand");
 const hide = document.querySelector(".hide");
 const menuItem = document.querySelector(".menu-item");
 const products = document.querySelector(".menu-products");
-
 const expandtwo = document.querySelector(".expand-two");
 const hidetwo = document.querySelector(".hide-two");
 const menuItemtwo = document.querySelector(".menu-item-two");
 const productstwo = document.querySelector(".menu-products-two");
-
 const expandthree = document.querySelector(".expand-three");
 const hidethree = document.querySelector(".hide-three");
 const menuItemthree = document.querySelector(".menu-item-three");
 const productsthree = document.querySelector(".menu-products-three");
-
 const expandfour = document.querySelector(".expand-four");
 const hidefour = document.querySelector(".hide-four");
 const menuItemfour = document.querySelector(".menu-item-four");
 const productsfour = document.querySelector(".menu-products-four");
 
+//FOOTER
 const iconbox = document.querySelector(".iconbox");
 const plus = document.querySelector(".plus");
 const down = document.querySelector(".down");
@@ -42,23 +40,17 @@ const downtwo = document.querySelector(".downtwo");
 const iconboxthree = document.querySelector(".iconboxthree");
 const plusthree = document.querySelector(".plusthree");
 const downthree = document.querySelector(".downthree");
-
 const about = document.querySelector(".more-about");
 const abouttwo = document.querySelector(".more-about-two");
 const aboutthree = document.querySelector(".more-about-three");
 
-const brown = document.querySelector(".brown");
-const blue = document.querySelector(".blue");
-const red = document.querySelector(".red");
-const profile = document.querySelector(".profile");
-const front = document.querySelector(".front");
-
+//CONTACT
 const contact = document.querySelector(".contact-wrapper");
 
 /* NAVBAR ON SCROLL */
 window.onscroll = (e) => {
   e.preventDefault();
-  if (window.scrollY > 500) {
+  if (window.scrollY > 400) {
     navbar.classList.add("nav-active");
     if (darkmode.classList.contains("light")) {
       navbar.classList.add("dark");
@@ -102,7 +94,9 @@ darkmode.addEventListener("click", (e) => {
   }
   if (document.body.classList.contains("dark")) {
     console.log("dark");
-    underline.style.background = "#fff";
+    footer.style.setProperty("--check-primary", "white");
+  } else {
+    footer.style.setProperty("--check-primary", "black");
   }
 });
 
@@ -203,16 +197,19 @@ const emailText = document.querySelector(".email-text");
 const emailInput = document.querySelector(".email-input");
 const emailBtn = document.querySelector(".email-btn");
 const emailWelcome = document.querySelector(".email-welcome");
+const check = document.querySelector(".checkbox");
 
 emailInput.style.display = "none";
 emailBtn.style.display = "none";
 emailWelcome.style.display = "none";
+check.style.display = "none";
 
 emailText.addEventListener("click", (e) => {
   e.preventDefault();
   emailText.style.display = "none";
   emailInput.style.display = "block";
   emailBtn.style.display = "block";
+  check.style.display = "block";
   emailInput.focus();
 });
 
@@ -220,33 +217,133 @@ emailBtn.addEventListener("click", (e) => {
   e.preventDefault();
   emailInput.style.display = "none";
   emailBtn.style.display = "none";
+  check.style.display = "none";
   emailWelcome.style.display = "block";
 });
 
-// PRODUCTS
-brown.addEventListener("click", (e) => {
-  brown.style.border = "2px solid";
-  red.style.border = "none";
-  blue.style.border = "none";
-  profile.src = "assets/images/hästtäcke/Brown_Profile_720x512.png";
-  front.src = "assets/images/hästtäcke/Brown_Front_720x512.png";
+//PRODUCTS
+const items = document.querySelectorAll(".item");
+const brown = document.querySelector(".brown");
+const blue = document.querySelector(".blue");
+const red = document.querySelector(".red");
+const profile = document.querySelector(".profile");
+const front = document.querySelector(".front");
+
+items.forEach((item) => {
+  const itemId = item.getAttribute("data-item-id");
+  const colors = item.querySelectorAll(".colors div");
+  const profileImg = item.querySelector(".profile");
+  const frontImg = item.querySelector(".front");
+  let selectedNode = null;
+
+  colors.forEach((color, index) => {
+    if (index === 0) {
+      color.style.scale = "1.3";
+      color.style.border = "2px solid";
+      selectedNode = color;
+    }
+    color.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // Remove border from the previously selected node
+      if (selectedNode) {
+        selectedNode.style.border = "none";
+        selectedNode.style.scale = "1";
+      }
+
+      // Add border to the clicked element
+      e.target.style.border = "2px solid";
+      e.target.style.scale = "1.3";
+
+      // Update the selected node to the current clicked element
+      selectedNode = e.target;
+
+      // Update images based on the selected color
+      if (e.target.classList.contains("brown")) {
+        if (itemId === "1") {
+          profileImg.src = "assets/images/hasttacke/Brown_Profile_720x512.png";
+          frontImg.src = "assets/images/hasttacke/Brown_Front_720x512.png";
+        } else if (itemId === "2") {
+          profileImg.src =
+            "assets/images/vast/Protech_Vast_Brown_V1_1440x1024.png";
+          frontImg.src =
+            "assets/images/vast/Protech_Vast_Brown_V2_1440x1024.png";
+        } else if (itemId === "3") {
+          profileImg.src = "assets/images/benskydd/Brown_band_1440x1024_PS.png";
+          frontImg.src =
+            "assets/images/benskydd/Brown_band_V2_1440x1024_PS.png";
+        } else if (itemId === "4") {
+          profileImg.src = "assets/images/hjalm/Brun_Hjalm_1440x1024.png";
+          frontImg.src = "assets/images/hjalm/Brun_Hjalm_V2_1440x1024.png";
+        }
+      } else if (e.target.classList.contains("red")) {
+        if (itemId === "1") {
+          profileImg.src = "assets/images/hasttacke/Red_Profile_720x512.png";
+          frontImg.src = "assets/images/hasttacke/Red_Front_720x512.png";
+        } else if (itemId === "2") {
+          profileImg.src =
+            "assets/images/vast/Protech_Vast_Red_V1_1440x1024.png";
+          frontImg.src = "assets/images/vast/Protech_Vast_Red_V2_1440x1024.png";
+        } else if (itemId === "3") {
+          profileImg.src = "assets/images/benskydd/Red_band_1440x1024_PS.png";
+          frontImg.src = "assets/images/benskydd/Red_band_V2_1440x1024_PS.png";
+        }
+      } else if (e.target.classList.contains("blue")) {
+        if (itemId === "1") {
+          profileImg.src = "assets/images/hasttacke/Blue_Profile_720x512.png";
+          frontImg.src = "assets/images/hasttacke/Blue_Front_720x512.png";
+        } else if (itemId === "2") {
+          profileImg.src =
+            "assets/images/vast/Protech_Vast_Blue_V1_1440x1024.png";
+          frontImg.src =
+            "assets/images/vast/Protech_Vast_Blue_V2_1440x1024.png";
+        } else if (itemId === "3") {
+          profileImg.src = "assets/images/benskydd/Blue_band_1440x1024_PS.png";
+          frontImg.src = "assets/images/benskydd/Blue_band_V2_1440x1024_PS.png";
+        } else if (itemId === "4") {
+          profileImg.src = "assets/images/hjalm/Darkblue_Hjalm_1440x1024.png";
+          frontImg.src = "assets/images/hjalm/DarkBlue_Hjalm_V2_1440x1024.png";
+        }
+      } else if (e.target.classList.contains("black")) {
+        if (itemId === "2") {
+          profileImg.src = "assets/images/vast/Protech_Vast_V1_1440x1024.png";
+          frontImg.src = "assets/images/vast/Protech_Vast_V2_1440x1024.png";
+        } else if (itemId === "3") {
+          profileImg.src = "assets/images/benskydd/Black_band_1440x1024_PS.png";
+          frontImg.src =
+            "assets/images/benskydd/Black_band_V2_1440x1024_PS.png";
+        } else if (itemId === "4") {
+          profileImg.src = "assets/images/hjalm/Svart_Hjalm_1440x1024.png";
+          frontImg.src = "assets/images/hjalm/Svart_Hjalm_V2_1440x1024.png";
+        }
+      } else if (e.target.classList.contains("green")) {
+        if (itemId === "2") {
+          profileImg.src =
+            "assets/images/vast/Protech_Vast_Green_V1_1440x1024.png";
+          frontImg.src =
+            "assets/images/vast/Protech_Vast_Green_V2_1440x1024.png";
+        }
+      }
+    });
+  });
 });
 
-blue.addEventListener("click", (e) => {
-  blue.style.border = "2px solid ";
-  brown.style.border = "none";
-  red.style.border = "none";
-  profile.src = "assets/images/hästtäcke/Blue_Profile_720x512.png";
-  front.src = "assets/images/hästtäcke/blue_Front_720x512.png";
-});
+var o = {
+  type: "carousel",
+  startAt: 0,
+  perView: 1,
+};
+var inst = new Glide(".glide", o).mount();
 
-red.addEventListener("click", (e) => {
-  red.style.border = "2px solid ";
-  blue.style.border = "none";
-  brown.style.border = "none";
-  profile.src = "assets/images/hästtäcke/Red_Profile_720x512.png";
-  front.src = "assets/images/hästtäcke/Red_Front_720x512.png";
-});
+document
+  .querySelector(".glide__slides")
+  .addEventListener("click", function (e) {
+    var ind = parseInt(e.target.getAttribute("data-index"));
+    if (ind === 0 || ind > 0) {
+      console.log(e.target.getAttribute("data-index"));
+      inst.go("=" + ind);
+    }
+  });
 
 //FOOTER
 
@@ -299,4 +396,11 @@ if (sessionStorage.getItem("dark") === "true") {
   navbar.classList.add("dark");
   sun.style.display = "block";
   moon.style.display = "none";
+  contact.style.background = "#171A16";
+
+  if (document.body.classList.contains("dark")) {
+    footer.style.setProperty("--check-primary", "white");
+  } else {
+    footer.style.setProperty("--check-primary", "black");
+  }
 }

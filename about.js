@@ -4,6 +4,7 @@ const darkmode = document.querySelector(".darkmode");
 const moon = document.querySelector(".moon");
 const sun = document.querySelector(".sun");
 const navActive = document.querySelector(".nav-active");
+var footer = document.querySelector(".footer-desktop");
 
 const openMenuMobile = document.querySelector(".menu-mobile");
 const closeMenuMobile = document.querySelector(".down-menu-mobile");
@@ -86,6 +87,11 @@ darkmode.addEventListener("click", (e) => {
     sun.style.display = "none";
     moon.style.display = "block";
     sessionStorage.setItem("dark", "false");
+  }
+  if (document.body.classList.contains("dark")) {
+    footer.style.setProperty("--check-primary", "white");
+  } else {
+    footer.style.setProperty("--check-primary", "black");
   }
 });
 
@@ -227,5 +233,10 @@ iconboxthree.addEventListener("click", (e) => {
     aboutthree.style.display = "none";
     downthree.style.display = "none";
     plusthree.style.display = "flex";
+  }
+  if (document.body.classList.contains("dark")) {
+    footer.style.setProperty("--check-primary", "white");
+  } else {
+    footer.style.setProperty("--check-primary", "black");
   }
 });
