@@ -1,3 +1,16 @@
+:root {
+  --check-primary: #000;
+  --check-secondary: #fff;
+  --Primary-Olive: #d3ddd3;
+  --Primary-Sand: #e2e1d9;
+  --Off-white-dark: #fafafa;
+  --Off-white: #fefefe;
+  --Off-Black-Dark: #171a16;
+  --Off-Black: #1c1e1b;
+  --Full-Black: #000;
+  --Full-White: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +23,7 @@ body {
 
 body,
 input {
+  background-color: var(--Off-white);
   font-family: IBM Plex Sans;
 }
 
@@ -20,7 +34,13 @@ a {
 
 .dark {
   transition: 1s ease-in;
-  background-color: #1c1e1b !important;
+  background-color: var(--Off-Black-Dark) !important;
+  color: #fff !important;
+}
+
+.semidark {
+  transition: 1s ease-in;
+  background-color: var(--Off-Black) !important;
   color: #fff !important;
 }
 
@@ -58,37 +78,13 @@ p {
 }
 
 /* HERO SECTION */
-/*
-.navbar-mobile {
-  display: flex;
-  width: 100%;
-  padding: 12px 20px;
-  flex-direction: column;
-  align-items: center;
-  flex-shrink: 0;
-  gap: 10px;
-}
-
-.navbar-top {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.icons {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-*/
 
 .navbar-wrapper {
   display: flex;
   width: 100%;
   flex-direction: column;
   padding: 12px 20px;
-  gap: 30px;
+  gap: 10px;
 }
 
 .navbar {
@@ -123,6 +119,7 @@ p {
   flex-direction: column;
   gap: 30px;
   padding: 10px 20px;
+  transition: ease-in 1s;
 }
 
 .menu-icons-mobile {
@@ -157,8 +154,14 @@ p {
   list-style: none;
 }
 
-li {
+.menu-item-wrapper li {
   margin-bottom: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.menu-item-wrapper li:hover {
+  text-decoration: underline;
 }
 
 .searchbar {
@@ -175,7 +178,8 @@ li {
   font-weight: 400;
   border: 0;
   outline: 0;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid;
+  background-color: transparent;
 }
 
 ::placeholder {
@@ -185,13 +189,14 @@ li {
 
 .hero {
   display: flex;
+  /*background-image: url(assets/images/Om_oss.png);*/
+  background-color: var(--Primary-Olive);
   height: 192px;
   width: 100%;
-  padding: 20px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  background-color: #9a9898;
+  /*background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;*/
 }
 
 /* END HERO SECITON */
@@ -227,6 +232,11 @@ button {
   border-radius: 31.61px;
   border: 1.054px solid #000;
   background-color: #fff;
+}
+
+button:hover {
+  background-color: #d3ddd3;
+  color: #fff;
 }
 
 .founders,
@@ -340,9 +350,6 @@ button {
     padding: 0px;
   }
 
-  .navbar-mobile {
-    display: none;
-  }
   .navbar {
     flex-direction: row;
     width: 100%;
@@ -386,6 +393,10 @@ button {
     display: none;
   }
 
+  .menu-icons-mobile {
+    display: none;
+  }
+
   .navbar svg:hover {
     cursor: pointer;
   }
@@ -410,7 +421,6 @@ button {
 
   .hero {
     height: 512px;
-    padding: 167px 148px;
     justify-content: flex-end;
     align-items: flex-start;
     align-self: stretch;
@@ -419,26 +429,33 @@ button {
   /*END HERO SECTION */
 
   /* MAIN SECTION */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   .company-info {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 100%;
     padding: 100px 0px 0px 0px;
     gap: 100px;
+    margin-top: 100px;
   }
 
   .company-img {
     display: flex;
-    justify-content: flex-end;
-    width: 50%;
-    height: 100%;
-    padding-top: 100px;
-  }
-
-  .company-img img {
-    max-width: 700px;
-    padding-left: 150px;
+    border-radius: 0px 150px 150px 0px;
+    background-image: url(/assets/images/Om_oss.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 50px;
+    width: 720px;
+    height: 660px;
   }
 
   .company-about {
@@ -446,7 +463,8 @@ button {
     justify-content: flex-start;
     align-items: flex-start;
     width: 50%;
-    padding-right: 150px;
+
+    padding-right: 50px;
   }
 
   .company-about p {
@@ -534,15 +552,18 @@ button {
 
   .footer-wrapper-desktop {
     display: flex;
+    background-color: var(--Off-white-dark);
     width: 100%;
     justify-content: center;
     align-items: center;
+    transition: ease-in 1s;
   }
 
   .footer-desktop {
     display: flex;
-    width: 90%;
+    width: 85%;
     padding: 40px 20px;
+    margin: 100px;
     justify-content: space-between;
     align-items: flex-start;
     align-content: flex-start;
@@ -577,6 +598,10 @@ button {
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+  }
+
+  .footer-desktop h4 {
+    font-weight: 600;
   }
 
   .footer-desktop a {

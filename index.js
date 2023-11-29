@@ -58,7 +58,6 @@ window.onscroll = (e) => {
   } else {
     navbar.classList.remove("nav-active");
     navbar.classList.remove("dark");
-    navbar.style.color = "black";
   }
 };
 
@@ -393,7 +392,7 @@ if (sessionStorage.getItem("dark") === "true") {
   document.body.classList.add("dark");
   dropdownContent.classList.toggle("dark");
   darkmode.classList.add("light");
-  navbar.classList.add("dark");
+  /* navbar.classList.add("dark"); */
   sun.style.display = "block";
   moon.style.display = "none";
   contact.style.background = "#171A16";

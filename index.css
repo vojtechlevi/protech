@@ -1,6 +1,14 @@
 :root {
   --check-primary: #000;
   --check-secondary: #fff;
+  --Primary-Olive: #d3ddd3;
+  --Primary-Sand: #e2e1d9;
+  --Off-white-dark: #fafafa;
+  --Off-white: #fefefe;
+  --Off-Black-Dark: #171a16;
+  --Off-Black: #1c1e1b;
+  --Full-Black: #000;
+  --Full-White: #fff;
 }
 
 * {
@@ -26,6 +34,12 @@ a {
 
 .dark {
   background-color: #1c1e1b !important;
+  color: #fff !important;
+}
+
+.semidark {
+  transition: 1s ease-in;
+  background-color: var(--Off-Black) !important;
   color: #fff !important;
 }
 
@@ -578,7 +592,7 @@ img {
     width: 100%;
     flex-direction: column;
     padding: 12px 20px;
-    gap: 30px;
+    gap: 10px;
   }
 
   .navbar {
@@ -636,6 +650,16 @@ img {
     gap: 5px;
   }
 
+  .menu-item-wrapper li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .menu-item-wrapper li:hover {
+    text-decoration: underline;
+  }
+
   .menu-item,
   .menu-item-two,
   .menu-item-three,
@@ -671,7 +695,8 @@ img {
     font-weight: 400;
     border: 0;
     outline: 0;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid;
+    background-color: transparent;
   }
 
   .searchbar input::placeholder {
