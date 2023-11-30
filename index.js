@@ -94,8 +94,10 @@ darkmode.addEventListener("click", (e) => {
   if (document.body.classList.contains("dark")) {
     console.log("dark");
     footer.style.setProperty("--check-primary", "white");
+    document.querySelector(".input-mobile").style.borderBottomColor = "white";
   } else {
     footer.style.setProperty("--check-primary", "black");
+    document.querySelector(".input-mobile").style.borderBottomColor = "black";
   }
 });
 
@@ -472,7 +474,55 @@ if (sessionStorage.getItem("dark") === "true") {
 
   if (document.body.classList.contains("dark")) {
     footer.style.setProperty("--check-primary", "white");
+    document.querySelector(".input-mobile").style.borderBottomColor = "white";
   } else {
     footer.style.setProperty("--check-primary", "black");
+    document.querySelector(".input-mobile").style.borderBottomColor = "black";
   }
 }
+
+/* LANGUAGE */
+const languageIcon = document.querySelector(".language-icon-mobile");
+
+document.querySelector(".sv").style.display = "block";
+document.querySelector(".no").style.display = "none";
+document.querySelector(".en").style.display = "none";
+
+languageIcon.addEventListener("click", (e) => {
+  document.querySelector(".sv").style.display = "block";
+  document.querySelector(".no").style.display = "block";
+  document.querySelector(".en").style.display = "block";
+});
+
+document.querySelector(".sv").addEventListener("click", (e) => {
+  document.querySelector(".sv").style.display = "block";
+  document.querySelector(".no").style.display = "none";
+  document.querySelector(".en").style.display = "none";
+});
+
+document.querySelector(".en").addEventListener("click", (e) => {
+  document.querySelector(".sv").style.display = "none";
+  document.querySelector(".no").style.display = "none";
+  document.querySelector(".en").style.display = "block";
+});
+document.querySelector(".no").addEventListener("click", (e) => {
+  document.querySelector(".sv").style.display = "none";
+  document.querySelector(".no").style.display = "block";
+  document.querySelector(".en").style.display = "none";
+});
+
+const languageIconDesktop = document.querySelector(".language-icon-desktop");
+
+document.querySelector(".languages-desktop").style.display = "none";
+
+languageIconDesktop.addEventListener("click", (e) => {
+  if (document.querySelector(".languages-desktop").style.display === "none") {
+    document.querySelector(".languages-desktop").style.display = "flex";
+  } else {
+    document.querySelector(".languages-desktop").style.display = "none";
+  }
+});
+
+document.querySelector(".languages-desktop").addEventListener("click", (e) => {
+  document.querySelector(".languages-desktop").style.display = "none";
+});
