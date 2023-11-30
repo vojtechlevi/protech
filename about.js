@@ -3,7 +3,8 @@ const navbar = document.querySelector(".navbar");
 const darkmode = document.querySelector(".darkmode");
 const moon = document.querySelector(".moon");
 const sun = document.querySelector(".sun");
-const searchBar = document.querySelector.input;
+const searchbar = document.querySelector(".input-desktop");
+const searchbarIcon = document.querySelector(".search-desktop");
 const footerWrapper = document.querySelector(".footer-wrapper-desktop");
 var footer = document.querySelector(".footer-desktop");
 
@@ -67,6 +68,18 @@ window.onscroll = (e) => {
   navbar.classList.add("nav-active");
 }*/
 
+/* SEARCHBAR */
+searchbar.style.display = "none";
+
+searchbarIcon.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (searchbar.style.display === "none") {
+    searchbar.style.display = "block";
+  } else {
+    searchbar.style.display = "none";
+  }
+});
+
 /* DARKMODE */
 sun.style.display = "none";
 
@@ -99,8 +112,12 @@ darkmode.addEventListener("click", (e) => {
   }
   if (document.body.classList.contains("dark")) {
     footer.style.setProperty("--check-primary", "white");
+    document.querySelector(".input-mobile").style.borderBottomColor = "white";
+    document.querySelector(".input-desktop").style.textColor = "white";
   } else {
     footer.style.setProperty("--check-primary", "black");
+    document.querySelector(".input-mobile").style.borderBottomColor = "black";
+    document.querySelector(".input-desktop").style.borderBottomColor = "black";
   }
 });
 
@@ -114,8 +131,12 @@ if (sessionStorage.getItem("dark") === "true") {
   moon.style.display = "none";
   if (document.body.classList.contains("dark")) {
     footer.style.setProperty("--check-primary", "white");
+    document.querySelector(".input-mobile").style.borderBottomColor = "white";
+    document.querySelector(".input-desktop").style.borderBottomColor = "white";
   } else {
     footer.style.setProperty("--check-primary", "black");
+    document.querySelector(".input-mobile").style.borderBottomColor = "black";
+    document.querySelector(".input-desktop").style.borderBottomColor = "black";
   }
 }
 
@@ -258,4 +279,50 @@ iconboxthree.addEventListener("click", (e) => {
   } else {
     footer.style.setProperty("--check-primary", "black");
   }
+});
+
+/* LANGUAGE */
+const languageIcon = document.querySelector(".language-icon-mobile");
+
+document.querySelector(".sv").style.display = "block";
+document.querySelector(".no").style.display = "none";
+document.querySelector(".en").style.display = "none";
+
+languageIcon.addEventListener("click", (e) => {
+  document.querySelector(".sv").style.display = "block";
+  document.querySelector(".no").style.display = "block";
+  document.querySelector(".en").style.display = "block";
+});
+
+document.querySelector(".sv").addEventListener("click", (e) => {
+  document.querySelector(".sv").style.display = "block";
+  document.querySelector(".no").style.display = "none";
+  document.querySelector(".en").style.display = "none";
+});
+
+document.querySelector(".en").addEventListener("click", (e) => {
+  document.querySelector(".sv").style.display = "none";
+  document.querySelector(".no").style.display = "none";
+  document.querySelector(".en").style.display = "block";
+});
+document.querySelector(".no").addEventListener("click", (e) => {
+  document.querySelector(".sv").style.display = "none";
+  document.querySelector(".no").style.display = "block";
+  document.querySelector(".en").style.display = "none";
+});
+
+const languageIconDesktop = document.querySelector(".language-icon-desktop");
+
+document.querySelector(".languages-desktop").style.display = "none";
+
+languageIconDesktop.addEventListener("click", (e) => {
+  if (document.querySelector(".languages-desktop").style.display === "none") {
+    document.querySelector(".languages-desktop").style.display = "flex";
+  } else {
+    document.querySelector(".languages-desktop").style.display = "none";
+  }
+});
+
+document.querySelector(".languages-desktop").addEventListener("click", (e) => {
+  document.querySelector(".languages-desktop").style.display = "none";
 });
