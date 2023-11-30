@@ -3,8 +3,6 @@ const navbar = document.querySelector(".navbar");
 const darkmode = document.querySelector(".darkmode");
 const moon = document.querySelector(".moon");
 const sun = document.querySelector(".sun");
-const searchbar = document.querySelector(".input-desktop");
-const searchbarIcon = document.querySelector(".search-desktop");
 const footerWrapper = document.querySelector(".footer-wrapper-desktop");
 var footer = document.querySelector(".footer-desktop");
 
@@ -69,16 +67,6 @@ window.onscroll = (e) => {
 }*/
 
 /* SEARCHBAR */
-searchbar.style.display = "none";
-
-searchbarIcon.addEventListener("click", (e) => {
-  e.preventDefault();
-  if (searchbar.style.display === "none") {
-    searchbar.style.display = "block";
-  } else {
-    searchbar.style.display = "none";
-  }
-});
 
 /* DARKMODE */
 sun.style.display = "none";
@@ -132,11 +120,9 @@ if (sessionStorage.getItem("dark") === "true") {
   if (document.body.classList.contains("dark")) {
     footer.style.setProperty("--check-primary", "white");
     document.querySelector(".input-mobile").style.borderBottomColor = "white";
-    document.querySelector(".input-desktop").style.borderBottomColor = "white";
   } else {
     footer.style.setProperty("--check-primary", "black");
     document.querySelector(".input-mobile").style.borderBottomColor = "black";
-    document.querySelector(".input-desktop").style.borderBottomColor = "black";
   }
 }
 
