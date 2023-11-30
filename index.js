@@ -222,11 +222,6 @@ emailBtn.addEventListener("click", (e) => {
 
 //PRODUCTS
 const items = document.querySelectorAll(".item");
-const brown = document.querySelector(".brown");
-const blue = document.querySelector(".blue");
-const red = document.querySelector(".red");
-const profile = document.querySelector(".profile");
-const front = document.querySelector(".front");
 
 items.forEach((item) => {
   const itemId = item.getAttribute("data-item-id");
@@ -244,20 +239,16 @@ items.forEach((item) => {
     color.addEventListener("click", function (e) {
       e.preventDefault();
 
-      // Remove border from the previously selected node
       if (selectedNode) {
         selectedNode.style.border = "none";
         selectedNode.style.scale = "1";
       }
 
-      // Add border to the clicked element
       e.target.style.border = "2px solid";
       e.target.style.scale = "1.3";
 
-      // Update the selected node to the current clicked element
       selectedNode = e.target;
 
-      // Update images based on the selected color
       if (e.target.classList.contains("brown")) {
         if (itemId === "1") {
           profileImg.src = "assets/images/hasttacke/Brown_Profile_720x512.png";
@@ -300,7 +291,7 @@ items.forEach((item) => {
           profileImg.src = "assets/images/benskydd/Blue_band_1440x1024_PS.png";
           frontImg.src = "assets/images/benskydd/Blue_band_V2_1440x1024_PS.png";
         } else if (itemId === "4") {
-          profileImg.src = "assets/images/hjalm/Darkblue_Hjalm_1440x1024.png";
+          profileImg.src = "assets/images/hjalm/DarkBlue_Hjalm_1440x1024.png";
           frontImg.src = "assets/images/hjalm/DarkBlue_Hjalm_V2_1440x1024.png";
         }
       } else if (e.target.classList.contains("black")) {
@@ -319,6 +310,88 @@ items.forEach((item) => {
         if (itemId === "2") {
           profileImg.src =
             "assets/images/vast/Protech_Vast_Green_V1_1440x1024.png";
+          frontImg.src =
+            "assets/images/vast/Protech_Vast_Green_V2_1440x1024.png";
+        }
+      }
+    });
+  });
+});
+
+const mobileItems = document.querySelectorAll(".glide__slide");
+mobileItems.forEach((item) => {
+  const itemId = item.getAttribute("data-index");
+  const colors = item.querySelectorAll(".colors div");
+  const frontImg = item.querySelector("img");
+  let selectedNode = null;
+  console.log(colors);
+
+  colors.forEach((color, index) => {
+    if (index === 0) {
+      color.style.scale = "1.3";
+      color.style.border = "2px solid";
+      color.style.cursor = "pointer";
+      selectedNode = color;
+    }
+    color.addEventListener("click", function (e) {
+      e.preventDefault();
+      console.log("clicked");
+
+      // Remove border from the previously selected node
+      if (selectedNode) {
+        selectedNode.style.border = "none";
+        selectedNode.style.scale = "1";
+      }
+
+      // Add border to the clicked element
+      e.target.style.border = "2px solid";
+      e.target.style.scale = "1.3";
+
+      // Update the selected node to the current clicked element
+      selectedNode = e.target;
+
+      // Update images based on the selected color
+      if (e.target.classList.contains("brown")) {
+        if (itemId === "1") {
+          frontImg.src = "assets/images/hasttacke/Brown_Front_720x512.png";
+        } else if (itemId === "2") {
+          frontImg.src =
+            "assets/images/vast/Protech_Vast_Brown_V2_1440x1024.png";
+        } else if (itemId === "3") {
+          frontImg.src = "assets/images/benskydd/Brown_band_1440x1024_PS.png";
+        } else if (itemId === "4") {
+          frontImg.src = "assets/images/hjalm/Brun_Hjalm_1440x1024.png";
+        }
+      } else if (e.target.classList.contains("red")) {
+        if (itemId === "1") {
+          frontImg.src = "assets/images/hasttacke/Red_Front_720x512.png";
+        } else if (itemId === "2") {
+          ("assets/images/vast/Protech_Vast_Red_V1_1440x1024.png");
+          frontImg.src = "assets/images/vast/Protech_Vast_Red_V2_1440x1024.png";
+        } else if (itemId === "3") {
+          frontImg.src = "assets/images/benskydd/Red_band_1440x1024_PS.png";
+        }
+      } else if (e.target.classList.contains("blue")) {
+        if (itemId === "1") {
+          frontImg.src = "assets/images/hasttacke/Blue_Front_720x512.png";
+        } else if (itemId === "2") {
+          frontImg.src =
+            "assets/images/vast/Protech_Vast_Blue_V2_1440x1024.png";
+        } else if (itemId === "3") {
+          frontImg.src = "assets/images/benskydd/Blue_band_1440x1024_PS.png";
+        } else if (itemId === "4") {
+          frontImg.src = "assets/images/hjalm/DarkBlue_Hjalm_1440x1024.png";
+        }
+      } else if (e.target.classList.contains("black")) {
+        if (itemId === "2") {
+          frontImg.src = "assets/images/vast/Protech_Vast_V2_1440x1024.png";
+        } else if (itemId === "3") {
+          frontImg.src = "assets/images/benskydd/Black_band_1440x1024_PS.png";
+        } else if (itemId === "4") {
+          frontImg.src = "assets/images/hjalm/Svart_Hjalm_1440x1024.png";
+        }
+      } else if (e.target.classList.contains("green")) {
+        if (itemId === "2") {
           frontImg.src =
             "assets/images/vast/Protech_Vast_Green_V2_1440x1024.png";
         }

@@ -205,7 +205,7 @@ svg {
 .presentation {
   display: flex;
   width: 100%;
-  margin: 60px 0px;
+  margin: 80px 0px;
   flex-direction: column;
   gap: 40px;
 }
@@ -214,15 +214,16 @@ svg {
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 50px;
 }
 .tech-img {
-  width: 600px;
-  height: 500px;
+  width: 500px;
+  height: 400px;
 }
 .tech .text {
-  width: 600px;
-  height: 500px;
+  width: 500px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -249,11 +250,11 @@ svg {
   background-color: #fff;
   border: 1px solid #000;
   margin-top: 20px;
+  color: inherit;
 }
 
 .read-more button:hover {
   background-color: #d3ddd3;
-  color: #fff;
 }
 
 .email {
@@ -266,6 +267,7 @@ svg {
 .email .left {
   background-image: url(assets/images/Hasttacke_hast_1x1_final.jpg);
   background-position: center;
+
   display: flex;
   width: 50%;
   height: 720px;
@@ -280,7 +282,6 @@ svg {
   line-height: 2rem;
   letter-spacing: 2px;
   color: #fff;
-  filter: brightness(100%);
 }
 
 .email .right {
@@ -377,17 +378,6 @@ svg {
   height: 512px;
 }
 
-.item-text {
-  display: flex;
-  width: 250px;
-  height: 31px;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-shrink: 0;
-  position: absolute;
-  bottom: 30px;
-}
-
 .front {
   display: none;
 }
@@ -442,19 +432,25 @@ svg {
   background-color: #404e45;
 }
 
-.benskydd {
-  width: 720px;
-  height: 500px;
+.item-text {
+  display: flex;
+  width: 50%;
+  height: 60px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-shrink: 0;
+  position: absolute;
+  bottom: 50px;
 }
 
 .item-info {
+  flex-direction: column;
   position: absolute;
-  bottom: 10px;
+  bottom: 5px;
   display: flex;
-  width: 250px;
+  width: 100%;
   height: 21px;
   align-items: flex-start;
-  gap: 10px;
   flex-shrink: 0;
 }
 
@@ -719,7 +715,8 @@ img {
   }
 
   .presentation {
-    gap: 50px;
+    margin: 0;
+    gap: 10px;
   }
   .tech {
     width: 100%;
@@ -727,6 +724,7 @@ img {
     justify-content: center;
     align-content: center;
     align-items: center;
+    gap: 0px;
   }
 
   .tech .text {
@@ -750,8 +748,8 @@ img {
 
   .tech-img {
     align-self: center;
-    width: 320px;
-    height: 300px;
+    width: 400px;
+    height: 320px;
   }
 
   .two {
@@ -781,6 +779,14 @@ img {
   /* PRODUCTS */
   .products {
     display: none;
+  }
+
+  .slide__text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    bottom: 30px;
   }
 
   .glide {
@@ -813,6 +819,8 @@ img {
     user-select: none;
   }
   .glide__slide {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     flex-shrink: 0;
@@ -846,10 +854,9 @@ img {
     z-index: 2;
     color: inherit;
     text-transform: uppercase;
-    padding: 9px 12px;
     background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 4px;
+    border: none;
     box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
     text-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
     opacity: 1;
@@ -865,11 +872,11 @@ img {
     border-color: inherit;
   }
   .glide__arrow--left {
-    left: 2em;
+    left: 1em;
     font-size: 1rem;
   }
   .glide__arrow--right {
-    right: 2em;
+    right: 1em;
     font-size: 1rem;
   }
   .glide__arrow--disabled {
